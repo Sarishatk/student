@@ -74,5 +74,17 @@ class DeleteEmployee(View):
         stud_data.delete()
 
         return render(request,"create_stud.html")
+    
+
+class AllStudentsview(View):
+
+    def get(self,request):
+
+        all_stud=StudentModel.objects.all()
+
+        return render(request,"allstudlist.html",{"all_stud":all_stud})
+
+
+
 
 
