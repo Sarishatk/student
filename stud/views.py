@@ -24,6 +24,17 @@ class studentCreateView(View):
                                          )
 
         return render(request,"create_stud.html")
+    
+
+# update student form using get method
+
+class UpdateStudView(View):
+
+    def get(self,request):
+
+        stud_data = StudentModel.objects.get(id = 1)
+
+        return render(request,"update_stud.html",{"stud_data":stud_data})
 
 
 
