@@ -14,6 +14,8 @@ class studentCreateView(View):
 
         print(request.POST)
 
+        # add browser html inputs to model (database)
+
         StudentModel.objects.create(name = request.POST.get("name"),
                                      roll_no =request.POST.get("rollno"),
                                       department=request.POST.get("dept"),
