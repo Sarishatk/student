@@ -31,10 +31,32 @@ class studentCreateView(View):
 class UpdateStudView(View):
 
     def get(self,request):
-
+        # give database data
         stud_data = StudentModel.objects.get(id = 1)
 
         return render(request,"update_stud.html",{"stud_data":stud_data})
+    
+    def post(self, request):
+        # to give updated data
+
+        stud_data = StudentModel.objects.get(id = 1) 
+
+        stud_data.name = request.POST.get("name")
+
+        stud_data.roll_no =  request.POST.get("rollno")
+
+        stud_data.department = request.POST.get("dept")
+
+        stud_data.email = request.POST.get("email")
+
+        stud_data.marks = request.POST.get("mark")
+
+        stud_data.save()
+
+        return render(request,"update_stud.html")
+
+
+
 
 
 
