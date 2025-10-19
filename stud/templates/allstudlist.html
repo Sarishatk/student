@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List all students</title>
 </head>
+
 <body>
     <h1>
         List All Students
     </h1>
 
-    {{data}}
+ <div style="border: 1px solid; width: 50%; padding: 4px; border-collapse: collapse;">
+        <table >
+            <th style="border: 1px solid black;">name</th>
+            <th style="border: 1px solid black;">roll_no</th>
+            <th style="border: 1px solid black;">department</th>
+            <th style="border: 1px solid black;">email</th>
+            <th style="border: 1px solid black;">marks</th>
+    
+            {%for stud in all_stud%}
+    
+            <tr style="border: 1px solid black;">
+                <td style="border: 1px solid black;">{{stud.name}}</td>
+                <td style="border: 1px solid black;">{{stud.roll_no}}</td>
+                <td style="border: 1px solid black;">{{stud.department}}</td>
+                <td style="border: 1px solid black;">{{stud.email}}</td>
+                <td style="border: 1px solid black;">{{stud.marks}}</td>
+            </tr>
+    
+        </table>
+
+
+    {%endfor%}
+    </div>
+
+
 </body>
+
 </html>
