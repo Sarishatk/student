@@ -12,28 +12,29 @@
         List All Students
     </h1>
 
- <div style="border: 1px solid; width: 50%; padding: 4px; border-collapse: collapse;">
-        <table >
-            <th style="border: 1px solid black;">name</th>
-            <th style="border: 1px solid black;">roll_no</th>
-            <th style="border: 1px solid black;">department</th>
-            <th style="border: 1px solid black;">email</th>
-            <th style="border: 1px solid black;">marks</th>
-    
-            {%for stud in all_stud%}
-    
-            <tr style="border: 1px solid black;">
-                <td style="border: 1px solid black;">{{stud.name}}</td>
-                <td style="border: 1px solid black;">{{stud.roll_no}}</td>
-                <td style="border: 1px solid black;">{{stud.department}}</td>
-                <td style="border: 1px solid black;">{{stud.email}}</td>
-                <td style="border: 1px solid black;">{{stud.marks}}</td>
+    <div style="border: 1px solid; width: 50%; padding: 4px; border-collapse: collapse;">
+        <table style="border: 1px solid black; border-collapse: collapse; width: 80%;">
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">Name</th>
+                <th style="border: 1px solid black; padding: 8px;">Roll No</th>
+                <th style="border: 1px solid black; padding: 8px;">Department</th>
+                <th style="border: 1px solid black; padding: 8px;">Email</th>
+                <th style="border: 1px solid black; padding: 8px;">Marks</th>
             </tr>
-    
+
+            {% for stud in all_stud %}
+            <tr>
+                <td style="border: 1px solid black; padding: 8px;">{{ stud.name }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ stud.roll_no }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ stud.department }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ stud.email }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ stud.marks }}</td>
+            </tr>
+            {% endfor %}
         </table>
 
 
-    {%endfor%}
+
     </div>
 
 
