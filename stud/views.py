@@ -58,6 +58,16 @@ class UpdateStudView(View):
 
 
 
+# to delete an employee
 
+class DeleteEmployee(View):
+
+    def get(self,request):
+
+        stud_data = StudentModel.objects.get(id = 2)
+
+        stud_data.delete()
+
+        return render(request,"create_stud.html")
 
 
