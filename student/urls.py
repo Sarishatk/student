@@ -21,6 +21,6 @@ from stud.views import  studentCreateView,UpdateStudView,DeleteEmployee
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('createstud/', studentCreateView.as_view()),
-    path('updatestud/',UpdateStudView.as_view()),
-    path('delete/',DeleteEmployee.as_view()),
+    path('updatestud/<int:pk>',UpdateStudView.as_view()),
+    path('delete/<int:pk>',DeleteEmployee.as_view()),
 ]

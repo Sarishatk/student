@@ -30,16 +30,19 @@ class studentCreateView(View):
 
 class UpdateStudView(View):
 
-    def get(self,request):
+    def get(self,request,**kwargs):
+        
         # give database data
         stud_data = StudentModel.objects.get(id = 1)
 
         return render(request,"update_stud.html",{"stud_data":stud_data})
     
-    def post(self, request):
+    def post(self, request,**kwargs):
+
+        update_id = kwargs.get("pk")
         # to give updated data
 
-        stud_data = StudentModel.objects.get(id = 1) 
+        stud_data = StudentModel.objects.get(id = update_id) 
 
         stud_data.name = request.POST.get("name")
 
@@ -62,9 +65,11 @@ class UpdateStudView(View):
 
 class DeleteEmployee(View):
 
-    def get(self,request):
+    def get(self,request,**kwargs):
 
-        stud_data = StudentModel.objects.get(id = 2)
+        delete_id = kwargs.get("pk")
+
+        stud_data = StudentModel.objects.get(id = delete_id)
 
         stud_data.delete()
 
